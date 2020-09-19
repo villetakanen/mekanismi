@@ -1,2 +1,5 @@
 # obviously, we need to omit node modules
 node_modules
+
+# dist includes built files
+dist
