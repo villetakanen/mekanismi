@@ -1,0 +1,2 @@
+# obviously, we need to omit node modules
+node_modules

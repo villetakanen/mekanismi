@@ -1,0 +1,19 @@
+{
+  "name": "mekanismi",
+  "version": "0.0.0",
+  "description": "Social site for RPG talk and documentation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "vue",
+    "cms",
+    "social media"
+  ],
+  "author": "Ville Takanen",
+  "license": "MIT",
+  "devDependencies": {
+    "standard-version": "^9.0.0"
+  }
+}
