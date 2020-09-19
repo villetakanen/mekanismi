@@ -15,5 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "standard-version": "^9.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
   }
 }
