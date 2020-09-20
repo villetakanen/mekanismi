@@ -10,3 +10,10 @@ let precache = self.__WB_MANIFEST
 if (!precache) precache = []
 
 workbox.precaching.precacheAndRoute(precache)
+
+addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      skipWaiting();
+    }
+  })
+

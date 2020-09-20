@@ -3,3 +3,4 @@ node_modules
 
 # dist includes built files
 dist
+.firebase/hosting*
