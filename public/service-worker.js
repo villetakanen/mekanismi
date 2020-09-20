@@ -7,13 +7,13 @@ if (workbox) {
 }
 
 let precache = self.__WB_MANIFEST
-if (!precache) precache = []
+if (!precache) precache = [{"revision":null,"url":"index.html"}]
 
 workbox.precaching.precacheAndRoute(precache)
 
-addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'skipWaiting') {
-      skipWaiting();
+self.addEventListener('message', (event) => {
+    if (event.data && event.data === 'skipWaiting') {
+      self.skipWaiting()
     }
   })
 

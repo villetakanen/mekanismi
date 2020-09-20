@@ -22,6 +22,7 @@
     "workbox-build": "^5.1.4"
   },
   "dependencies": {
+    "register-service-worker": "^1.7.1",
     "vue": "^3.0.0"
   }
 }

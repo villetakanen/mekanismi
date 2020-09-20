@@ -5,60 +5,62 @@
 
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
+import { register } from 'register-service-worker'
 
 export default defineComponent({
   setup(props) {
     const updatesAvailable:Ref = ref(false)
+    let swr:ServiceWorkerRegistration|undefined
 
     // ************************************************************************
     // * SETUP WORKBOX/SPA AND THE UPDATE BUTTON HERE                         *
     // * TODO: MOVE TO A COMPONENT WHEN FUNCTIONAL                            *
     // ************************************************************************
-    window.addEventListener('load', () => {
-      if ('serviceWorker' in navigator) {
-        console.log('adding event listener')
-        
-        navigator.serviceWorker.register('/service-worker.js').then((registration) => {
 
-          function listenForWaitingServiceWorker(reg, callback) {
-            console.log(reg)
-            function awaitStateChange() {
-              reg.installing.addEventListener('statechange', function() {
-                if (this.state === 'installed') callback(reg);
-              });
-            }
-            if (!reg) return
-            if (reg.waiting) return callback(reg)
-            if (reg.installing) awaitStateChange()
-            reg.addEventListener('updatefound', awaitStateChange)
-          }
-          
-          function promptUserToRefresh(reg) {
-            // this is just an example
-            // don't use window.confirm in real life; it's terrible
-            if (window.confirm("New version available! OK to refresh?")) {
-              reg.waiting.postMessage('skipWaiting');
-            }
-          }
-
-          listenForWaitingServiceWorker(registration, promptUserToRefresh)
-        }) 
-
-        // reload once when the new Service Worker starts activating
-        let refreshing:Boolean
-        navigator.serviceWorker.addEventListener('controllerchange',
-          () => {
-            if (refreshing) return
-            refreshing = true
-            window.location.reload()
-          }
-        )
+    register('/service-worker.js', {
+      registrationOptions: { scope: './' },
+      ready (registration) {
+        console.log('Service worker is active.')
+      },
+      registered (registration) {
+        console.log('Service worker has been registered.')
+        setInterval(() => {
+          registration.update()
+          }, 100) // 1000 * 60) // minute checks for testing * 60) // e.g. hourly checks
+      },
+      cached (registration) {
+        console.log('Content has been cached for offline use.')
+      },
+      updatefound (registration) {
+        console.log('New content is downloading.')
+      },
+      updated (registration:ServiceWorkerRegistration) {
+        console.log('New content is available; please refresh.')
+        updatesAvailable.value = true
+        swr = registration
+      },
+      offline () {
+        console.log('No internet connection found. App is running in offline mode.')
+      },
+      error (error) {
+        console.error('Error during service worker registration:', error)
       }
     })
+
+    let refreshing = false
+    // Refresh all open app tabs when a new service worker is installed.
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (refreshing) return
+      refreshing = true
+      window.location.reload()
+    })
+
     function acceptUpdate () {
-      console.log('acceptUpdate ...')
+      if (!swr || !swr.waiting) { return }
+      swr.waiting.postMessage('skipWaiting')
     }
 
+    // *** end SETUP WORKBOX/SPA AND THE UPDATE BUTTON HERE *******************
 
     return { updatesAvailable, acceptUpdate }
   }
