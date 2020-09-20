@@ -1,17 +1,13 @@
 <template>
   <h1>Mekanismi 2</h1>
   <button :disabled="!updatesAvailable" v-on:click="acceptUpdate">update!</button>
-  <button :disabled="!updatesAvailable" v-on:click="rejectUpdate">cancel!</button>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
-import { Workbox, messageSW } from 'https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-window.prod.mjs'
 
 export default defineComponent({
   setup(props) {
-    const rejectUpdate:Ref = ref(() => {})
-    const acceptUpdate:Ref = ref(() => {})
     const updatesAvailable:Ref = ref(false)
 
     // ************************************************************************
@@ -20,60 +16,51 @@ export default defineComponent({
     // ************************************************************************
     window.addEventListener('load', () => {
       if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        window.addEventListener('load', () => {
-          console.log('adding event listener')
-          //navigator.serviceWorker.register('/service-worker.js')
-          const wb = new Workbox('/service-worker.js')
-          let registration
+        console.log('adding event listener')
+        
+        navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+
+          function listenForWaitingServiceWorker(reg, callback) {
+            console.log(reg)
+            function awaitStateChange() {
+              reg.installing.addEventListener('statechange', function() {
+                if (this.state === 'installed') callback(reg);
+              });
+            }
+            if (!reg) return
+            if (reg.waiting) return callback(reg)
+            if (reg.installing) awaitStateChange()
+            reg.addEventListener('updatefound', awaitStateChange)
+          }
           
-
-          const showSkipWaitingPrompt = (event) => {
-          // `event.wasWaitingBeforeRegister` will be false if this is
-          // the first time the updated service worker is waiting.
-          // When `event.wasWaitingBeforeRegister` is true, a previously
-          // updated service worker is still waiting.
-          // You may want to customize the UI prompt accordingly.
-
-          const prompt = refreshSnack({
-            onAccept: async () => {
-                console.log('refreshSnack, accept')
-                // Assuming the user accepted the update, set up a listener
-                // that will reload the page as soon as the previously waiting
-                // service worker has taken control.
-                wb.addEventListener('controlling', (event) => {
-                  window.location.reload();
-                });
-
-                if (registration && registration.waiting) {
-                  // Send a message to the waiting service worker,
-                  // instructing it to activate.  
-                  // Note: for this to work, you have to add a message
-                  // listener in your service worker. See below.
-                  messageSW(registration.waiting, {type: 'SKIP_WAITING'});
-                }
-              },
-
-              onReject: () => {
-                console.log('refreshSnack, reject')
-                updatesAvailable.value = false
-              }
-            })
+          function promptUserToRefresh(reg) {
+            // this is just an example
+            // don't use window.confirm in real life; it's terrible
+            if (window.confirm("New version available! OK to refresh?")) {
+              reg.waiting.postMessage('skipWaiting');
+            }
           }
 
-          function refreshSnack(e:{ onAccept:Function, onReject:Function}):void {
-            updatesAvailable.value = true
-            acceptUpdate.value = e.onAccept
-            rejectUpdate.value = e.onReject
+          listenForWaitingServiceWorker(registration, promptUserToRefresh)
+        }) 
+
+        // reload once when the new Service Worker starts activating
+        let refreshing:Boolean
+        navigator.serviceWorker.addEventListener('controllerchange',
+          () => {
+            if (refreshing) return
+            refreshing = true
+            window.location.reload()
           }
-
-          wb.addEventListener('waiting', showSkipWaitingPrompt);
-          wb.addEventListener('externalwaiting', showSkipWaitingPrompt)
-
-          wb.register()
-        })
+        )
       }
     })
+    function acceptUpdate () {
+      console.log('acceptUpdate ...')
+    }
+
+
+    return { updatesAvailable, acceptUpdate }
   }
 })
 </script>
