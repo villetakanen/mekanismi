@@ -11,7 +11,7 @@
     </div>
   </transition>
   <!-- To debug trasitions, uncomment this: - ->
-  <button class="action action-text" @click="updatesAvailable=true">Force Banner On</button> 
+  <button class="action action-text" @click="updatesAvailable=true">Force Banner On</button>
   <!- - //debu -->
 </template>
 
