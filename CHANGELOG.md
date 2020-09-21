@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/villetakanen/mekanismi/compare/v3.2.3...v3.3.0) (2020-09-21)
+
+
+### Features
+
+* router added ([471954c](https://github.com/villetakanen/mekanismi/commit/471954ca273abac41c3b89c1b41240fa54fc4396))
+
+
+### Bug Fixes
+
+* test coverage ([a871527](https://github.com/villetakanen/mekanismi/commit/a871527ed3145b26f0726a3128fa702e2dce612b))
+
 ### [3.2.3](https://github.com/villetakanen/mekanismi/compare/v3.2.2...v3.2.3) (2020-09-21)
 
 
