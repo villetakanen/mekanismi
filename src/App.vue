@@ -2,6 +2,10 @@
   <MaterialBanner/>
   <div id="router-view-container">
     <div id="router-view-layout">
+      <p>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </p>
       <router-view></router-view>
     </div>
   </div>
