@@ -132,8 +132,8 @@ TN:
 SF:src/components/layout/PageHeader.vue
 FNF:0
 FNH:0
-DA:2,2
-DA:4,2
+DA:2,3
+DA:4,3
 LF:2
 LH:2
 BRF:0
@@ -143,11 +143,11 @@ TN:
 SF:src/views/About.vue
 FNF:0
 FNH:0
-DA:2,0
-DA:3,0
-DA:5,0
+DA:2,1
+DA:3,1
+DA:5,1
 LF:3
-LH:0
+LH:3
 BRF:0
 BRH:0
 end_of_record
