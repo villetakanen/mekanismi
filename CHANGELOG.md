@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.2](https://github.com/villetakanen/mekanismi/compare/v3.2.1...v3.2.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* remove debug styles ([540135d](https://github.com/villetakanen/mekanismi/commit/540135dcf86e0aa75e7230661327a112a26f5183))
+* styles to global sass ([668cbd7](https://github.com/villetakanen/mekanismi/commit/668cbd7e58e48a87f157f804e9d92b461486c600))
+
 ### [3.2.1](https://github.com/villetakanen/mekanismi/compare/v3.2.0...v3.2.1) (2020-09-21)
 
 
