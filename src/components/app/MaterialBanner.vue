@@ -10,7 +10,9 @@
       </div>
     </div>
   </transition>
-  <button class="action action-text" @click="updatesAvailable=true">Force Banner On</button>
+  <!-- To debug trasitions, uncomment this: - ->
+  <button class="action action-text" @click="updatesAvailable=true">Force Banner On</button> 
+  <!- - //debu -->
 </template>
 
 <script lang="ts">
@@ -24,7 +26,7 @@ export default defineComponent({
 
     // ************************************************************************
     // * SETUP WORKBOX/SPA AND THE UPDATE BUTTON HERE                         *
-    // * TODO: MOVE TO A COMPONENT WHEN FUNCTIONAL                            *
+    // * TODO: MOVE TO A COMPONENT WHEN FUNCTIONAL       .                     *
     // ************************************************************************
 
     register('/service-worker.js', {
