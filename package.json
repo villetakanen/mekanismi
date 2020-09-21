@@ -9,8 +9,9 @@
     "dev": "vite --https",
     "build": "vite build && node workbox-build.js",
     "lint": "npx eslint src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npx eslint src --fix && standard-version"
+    "test": "npx jest --coverage",
+    "release": "npx eslint src --fix && standard-version",
+    "publish": "npm run build && firebase deploy"
   },
   "keywords": [
     "vue",
@@ -25,16 +26,20 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/eslint-config-typescript": "^5.1.0",
+    "@vue/test-utils": "^2.0.0-beta.5",
     "eslint": "^7.9.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^7.0.0-beta.3",
+    "jest": "^26.4.2",
     "standard-version": "^9.0.0",
     "typescript": "^4.0.3",
     "vite": "^1.0.0-rc.4",
-    "workbox-build": "^5.1.4"
+    "vue-jest": "^5.0.0-alpha.4",
+    "workbox-build": "^5.1.4",
+    "@types/jest": "^26.0.14"
   },
   "dependencies": {
     "register-service-worker": "^1.7.1",
