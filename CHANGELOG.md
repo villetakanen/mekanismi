@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/villetakanen/mekanismi/compare/v3.1.0...v3.2.0) (2020-09-21)
+
+
+### Features
+
+* updates as banner ([86ed5a0](https://github.com/villetakanen/mekanismi/commit/86ed5a02a3e661fe1241128dd33f281025d6b35c))
+
 ## [3.1.0](https://github.com/villetakanen/mekanismi/compare/v3.0.0...v3.1.0) (2020-09-21)
 
 
