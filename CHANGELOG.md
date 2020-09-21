@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/villetakanen/mekanismi/compare/v0.0.9...v3.0.0) (2020-09-21)
+
+
+### Features
+
+* base styling in place ([532ec75](https://github.com/villetakanen/mekanismi/commit/532ec75205bba468478e561ae92c180bc0c2e86d))
+
+
+### Bug Fixes
+
+* version release build code style fixes ([3adfc06](https://github.com/villetakanen/mekanismi/commit/3adfc06d288735c585eefbffb43b37f7d1042195))
+
 ### [0.0.9](https://github.com/villetakanen/mekanismi/compare/v0.0.8...v0.0.9) (2020-09-21)
 
 
