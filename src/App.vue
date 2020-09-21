@@ -1,18 +1,20 @@
 <template>
   <MaterialBanner/>
-  <PageHeader text="Mekanismi 2"/>
+  <div id="router-view-container">
+    <div id="router-view-layout">
+      <router-view></router-view>
+    </div>
+  </div>
   <VersionInfo/>
 </template>
 
 <script lang="ts">
-import { defineComponent} from 'vue'
-import PageHeader from './components/layout/PageHeader.vue'
+import { defineComponent } from 'vue'
 import VersionInfo from './components/app/VersionInfo.vue'
 import MaterialBanner from './components/app/MaterialBanner.vue'
 
 export default defineComponent({
   components: {
-    PageHeader,
     VersionInfo,
     MaterialBanner
   }

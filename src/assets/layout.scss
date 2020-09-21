@@ -69,3 +69,21 @@ div.material-banner {
     }
   }
 }
+
+// Router-view-container
+div#router-view-container {
+  margin: 0;
+  padding: 16px;
+  div#router-view-layout {
+    margin: 0;
+    padding: 0;
+  }
+}
+@include media('>desktop') {
+  div#router-view-container {
+    div#router-view-layout {
+      max-width: 58em;
+      margin: 0 auto;
+    }
+  }
+}
