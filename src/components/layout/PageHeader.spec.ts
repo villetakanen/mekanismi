@@ -8,7 +8,7 @@ describe('PageHeader.vue', () => {
       props: {
         text: 'Mekanismi'
       }
-    })
+    } as any)
     expect(wrapper.text()).toContain('Mekanismi')
   })
 })
