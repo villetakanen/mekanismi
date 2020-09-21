@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import VersionInfo from './VersionInfo.vue'
+import { meta } from '../../version'
 
 describe('VersionInfo.vue', () => {
   it('mounts?', () => {
@@ -8,6 +9,6 @@ describe('VersionInfo.vue', () => {
         text: 'Mekanismi'
       }
     } as any)
-    expect(wrapper.text()).toContain('0.0.8')
+    expect(wrapper.text()).toContain(meta.version)
   })
 })
