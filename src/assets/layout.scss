@@ -42,7 +42,7 @@
   --color-primary: #00838f;
   --color-primary-accent: #005662;
   --color-primary-lighten: #1A7A7E;
-  --color-primary-light: #428e92;
+  --color-primary-light: #4fb3bf;
   --color-primary-light-tint: rgba(66, 142, 146, 0.1);
   --color-base: white;
 }
@@ -54,6 +54,17 @@
 //fonts
 h1, button{
   font-family: Lato, sans-serif;
+}
+
+// primary theme
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color 1.0s;
+  font-weight: 400;
+  &:hover{
+    color: var(--color-primary-accent)
+  }
 }
 
 button {
