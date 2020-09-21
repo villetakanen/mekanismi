@@ -1,13 +1,17 @@
 <template>
-  <h1>Mekanismi 2</h1>
+  <PageHeader text="Mekanismi 2 v3"/>
   <button :disabled="!updatesAvailable" v-on:click="acceptUpdate">update!</button>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
 import { register } from 'register-service-worker'
+import PageHeader from './components/layout/PageHeader.vue'
 
 export default defineComponent({
+  components: {
+    PageHeader
+  },
   setup (props) {
     const updatesAvailable:Ref = ref(false)
     let swr:ServiceWorkerRegistration|undefined
