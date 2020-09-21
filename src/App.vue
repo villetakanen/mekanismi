@@ -1,5 +1,5 @@
 <template>
-  <PageHeader text="Mekanismi 2 v3"/>
+  <PageHeader text="Mekanismi 2"/>
   <button :disabled="!updatesAvailable" v-on:click="acceptUpdate">update!</button>
   <VersionInfo/>
 </template>
@@ -73,3 +73,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+</style>
