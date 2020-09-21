@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.0](https://github.com/villetakanen/mekanismi/compare/v3.3.0...v3.4.0) (2020-09-21)
+
+
+### Features
+
+* about page tests ([6f316bc](https://github.com/villetakanen/mekanismi/commit/6f316bc54e93e6c54bc3bd82fc3dab296b196a03))
+* about pge added ([9ca2c9b](https://github.com/villetakanen/mekanismi/commit/9ca2c9bb97f32430b0167549b5168f2d8c3aee23))
+
 ## [3.3.0](https://github.com/villetakanen/mekanismi/compare/v3.2.3...v3.3.0) (2020-09-21)
 
 
