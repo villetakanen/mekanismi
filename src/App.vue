@@ -77,10 +77,15 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
+@import './assets/include-media.scss';
+
 :root {
   --color-border-light: rgba(170,200,200,1);
+  --color-primary-accent: rgba(70,100,255,1);
+  --color-fore-on-accent: white;
 }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 0;
