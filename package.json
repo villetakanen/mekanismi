@@ -11,7 +11,7 @@
     "lint": "npx eslint src",
     "test": "npx jest --coverage",
     "release": "npx eslint src --fix && standard-version",
-    "publish": "node release-pre-build && npm run build && firebase deploy"
+    "publish": "git push --follow-tags origin master && node release-pre-build && npm run build && firebase deploy"
   },
   "keywords": [
     "vue",
