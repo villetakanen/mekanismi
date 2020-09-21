@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/villetakanen/mekanismi/compare/v0.0.7...v0.0.8) (2020-09-21)
+
+
+### Features
+
+* jest testing example ([18125c8](https://github.com/villetakanen/mekanismi/commit/18125c8c188dbd2e4fe91694a4596dc8d18f9d28))
+
+
+### Bug Fixes
+
+* as issue 194 of vue-test-utils-next ([fee0042](https://github.com/villetakanen/mekanismi/commit/fee004261c85392eacb5852ea94626d59357de52))
+
 ### [0.0.7](https://github.com/villetakanen/mekanismi/compare/v0.0.6...v0.0.7) (2020-09-21)
 
 
