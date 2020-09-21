@@ -1,16 +1,19 @@
 @import './include-media.scss';
 
 :root {
-    --color-border-light: rgba(170,200,200,1);
-    --color-primary-accent: rgba(70,100,255,1);
-    --color-fore-on-accent: white;
-    --color-primary: rgb(0,96,100);
-    --color-primary-lighten: #1A7A7E;
-    --color-primary-light: #428e92;
-    --color-primary-light-tint: rgba(66, 142, 146, 0.1);
-    --color-base: white;
-  }
-  
+  --color-border-light: rgba(170,200,200,1);
+  --color-primary-accent: rgba(70,100,255,1);
+  --color-fore-on-accent: white;
+  --color-primary: rgb(0,96,100);
+  --color-primary-lighten: #1A7A7E;
+  --color-primary-light: #428e92;
+  --color-primary-light-tint: rgba(66, 142, 146, 0.1);
+  --color-base: white;
+}
+
+*:focus {
+  outline: none;
+}
 
 button.action {
   border: none;
@@ -35,4 +38,34 @@ button.action.action-text{
 }
 button.action.action-text:hover {
   background: var(--color-primary-light-tint) radial-gradient(circle, transparent 1%, var(--color-base) 1%) center/15000%;
+}
+
+// Material Banner element
+div.material-banner {
+  display: block;
+  position: relative;
+  height: auto;
+  margin: 0;
+  padding: 16px;
+  border-bottom: 2px solid var(--color-primary-light);
+  background-color: var(--color-primary-light-tint);
+  @include media('<desktop') {
+    div.actions {
+      text-align: right;
+    }
+  }
+}
+@include media('>desktop') {
+  .material-banner {
+    padding: 16px 32px;
+  }
+  .banner-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    div.actions {
+      align-self: center;
+      display: flex;
+    }
+  }
 }
