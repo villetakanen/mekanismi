@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.2](https://github.com/villetakanen/mekanismi/compare/v3.4.1...v3.4.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* button colors ([3e6e195](https://github.com/villetakanen/mekanismi/commit/3e6e195389a70c801135a7695baa524326210e06))
+* link colors and style ([f3861a4](https://github.com/villetakanen/mekanismi/commit/f3861a41410a7a29b1665172957a55a2bdba6c17))
+
 ### [3.4.1](https://github.com/villetakanen/mekanismi/compare/v3.4.0...v3.4.1) (2020-09-21)
 
 
