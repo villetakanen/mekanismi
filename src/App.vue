@@ -1,16 +1,19 @@
 <template>
   <PageHeader text="Mekanismi 2 v3"/>
   <button :disabled="!updatesAvailable" v-on:click="acceptUpdate">update!</button>
+  <VersionInfo/>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
 import { register } from 'register-service-worker'
 import PageHeader from './components/layout/PageHeader.vue'
+import VersionInfo from './components/app/VersionInfo.vue'
 
 export default defineComponent({
   components: {
-    PageHeader
+    PageHeader,
+    VersionInfo
   },
   setup (props) {
     const updatesAvailable:Ref = ref(false)
