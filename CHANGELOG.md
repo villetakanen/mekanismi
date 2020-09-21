@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/villetakanen/mekanismi/compare/v3.0.0...v3.1.0) (2020-09-21)
+
+
+### Features
+
+* button styling and Sass tests ([f2d2494](https://github.com/villetakanen/mekanismi/commit/f2d2494b30bad75e4405488cf809667f9bee2c30))
+* material banner ([fcfefb6](https://github.com/villetakanen/mekanismi/commit/fcfefb6fdf099c8c19ae0809f8a0ba8d20084e67))
+* sass support ([28c75c3](https://github.com/villetakanen/mekanismi/commit/28c75c3ec9af24b0f9a08f69278e55e28cbc44b6))
+
 ## [3.0.0](https://github.com/villetakanen/mekanismi/compare/v0.0.9...v3.0.0) (2020-09-21)
 
 
