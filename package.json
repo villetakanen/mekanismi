@@ -1,8 +1,10 @@
 {
   "name": "mekanismi",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Social site for RPG talk and documentation",
-  "repository": {"url": "https://github.com/villetakanen/mekanismi"},
+  "repository": {
+    "url": "https://github.com/villetakanen/mekanismi"
+  },
   "scripts": {
     "dev": "vite --https",
     "build": "vite build && node workbox-build.js",
