@@ -6,7 +6,7 @@
     "url": "https://github.com/villetakanen/mekanismi"
   },
   "scripts": {
-    "dev": "vite --https",
+    "dev": "vite",
     "build": "vite build && node workbox-build.js",
     "lint": "npx eslint src",
     "test": "npx jest --coverage",

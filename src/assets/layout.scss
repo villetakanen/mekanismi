@@ -1,0 +1,38 @@
+@import './include-media.scss';
+
+:root {
+    --color-border-light: rgba(170,200,200,1);
+    --color-primary-accent: rgba(70,100,255,1);
+    --color-fore-on-accent: white;
+    --color-primary: rgb(0,96,100);
+    --color-primary-lighten: #1A7A7E;
+    --color-primary-light: #428e92;
+    --color-primary-light-tint: rgba(66, 142, 146, 0.1);
+    --color-base: white;
+  }
+  
+
+button.action {
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-fore-on-accent);
+  padding: 8px 16px;
+  margin: 2px 4px;
+  border-radius: 0px;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  //animation
+  background-position: center;
+  transition: background 0.8s;
+}
+button.action:hover {
+  background: var(--color-primary-lighten) radial-gradient(circle, transparent 1%, var(--color-primary) 1%) center/15000%;
+}
+button.action.action-text{
+  background-color: var(--color-base);
+  color: var(--color-primary);
+}
+button.action.action-text:hover {
+  background: var(--color-primary-light-tint) radial-gradient(circle, transparent 1%, var(--color-base) 1%) center/15000%;
+}
