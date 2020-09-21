@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.3](https://github.com/villetakanen/mekanismi/compare/v3.2.2...v3.2.3) (2020-09-21)
+
+
+### Bug Fixes
+
+* lint ([c27a997](https://github.com/villetakanen/mekanismi/commit/c27a9977b80bd4525d3173bba2eff826b4b0b658))
+
 ### [3.2.2](https://github.com/villetakanen/mekanismi/compare/v3.2.1...v3.2.2) (2020-09-21)
 
 
