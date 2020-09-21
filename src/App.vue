@@ -8,7 +8,7 @@ import { defineComponent, ref, Ref } from 'vue'
 import { register } from 'register-service-worker'
 
 export default defineComponent({
-  setup(props) {
+  setup (props) {
     const updatesAvailable:Ref = ref(false)
     let swr:ServiceWorkerRegistration|undefined
 
@@ -26,7 +26,7 @@ export default defineComponent({
         console.log('Service worker has been registered.')
         setInterval(() => {
           registration.update()
-          }, 100) // 1000 * 60) // minute checks for testing * 60) // e.g. hourly checks
+        }, 100) // 1000 * 60) // minute checks for testing * 60) // e.g. hourly checks
       },
       cached (registration) {
         console.log('Content has been cached for offline use.')

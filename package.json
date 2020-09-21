@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "vite --https",
     "build": "vite build && node workbox-build.js",
+    "lint": "npx eslint src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version"
+    "release": "npx eslint src --fix && standard-version"
   },
   "keywords": [
     "vue",
