@@ -1,4 +1,5 @@
 <template>
+  <MaterialBanner/>
   <PageHeader text="Mekanismi 2"/>
   <button :disabled="!updatesAvailable" v-on:click="acceptUpdate">update!</button>
   <VersionInfo/>
@@ -9,11 +10,13 @@ import { defineComponent, ref, Ref } from 'vue'
 import { register } from 'register-service-worker'
 import PageHeader from './components/layout/PageHeader.vue'
 import VersionInfo from './components/app/VersionInfo.vue'
+import MaterialBanner from './components/app/MaterialBanner.vue'
 
 export default defineComponent({
   components: {
     PageHeader,
-    VersionInfo
+    VersionInfo,
+    MaterialBanner
   },
   setup (props) {
     const updatesAvailable:Ref = ref(false)
@@ -75,7 +78,12 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+  --color-border-light: rgba(170,200,200,1);
+}
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 </style>
