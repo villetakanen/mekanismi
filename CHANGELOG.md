@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.7.0](https://github.com/villetakanen/mekanismi/compare/v3.6.0...v3.7.0) (2020-09-22)
+
+
+### Features
+
+* logout ([ad283c9](https://github.com/villetakanen/mekanismi/commit/ad283c9e5984e2104314e368e96b745844f2621c))
+
 ## [3.6.0](https://github.com/villetakanen/mekanismi/compare/v3.5.0...v3.6.0) (2020-09-22)
 
 
