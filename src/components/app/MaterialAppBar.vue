@@ -35,8 +35,8 @@ div#appBar{
   display: flex;
   background-color: var(--color-primary);
   height: 22px;
-  border-bottom: solid 4px var(--color-primary-accent);
-  color: white;
+  border-top: solid 4px var(--color-primary-dark);
+  color: var(--font-color-primary);
   padding: 16px;
   position: fixed;
   width: 100%;
@@ -56,15 +56,27 @@ div#appBar{
     margin: 0;
   }
   &.elevated {
-    box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.20);
+    box-shadow: 0px 16px 0px 0px var(--color-shadow-14);
     // box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20)
   }
   button.appLogoButton{
     border-radius: 50%;
-    width: 54px;
-    height: 54px;
-    padding: 8px;
+    width: 42px;
+    height: 42px;
+    padding: 0px;
     margin-right: 16px;
+    margin-top:-10px;
+    border: solid 2px rgba(255,255,255, 0.44);
+    overflow: visible;
+    box-shadow: none;
+    background-color: none;
+    transition: background 0.8s;
+    img {
+      margin: -4px;
+    }
+    &:hover {
+      background-color: var(--color-shadow-14);
+    }
   }
 }
 </style>

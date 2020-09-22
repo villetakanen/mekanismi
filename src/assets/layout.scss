@@ -39,12 +39,17 @@
 :root {
   --color-border-light: rgba(170,200,200,1);
   --color-fore-on-accent: white;
-  --color-primary: #75A074;
-  --color-primary-light: #86A694;
-  --color-primary-lighten: #1A7A7E;
+  --color-primary: #4caf50;
+  --color-primary-dark: #087f23;
+  --color-primary-light: #80e27e;
   --color-primary-accent: #F03E5B;
   --color-primary-light-tint: rgba(66, 142, 146, 0.1);
-  --color-font-primary: rgba(20.);
+  --font-color-primary: #263238;
+  --font-color-light: #000a12;
+  --color-background-base: rgb(226,226,225);
+  --color-background-content: rgb(245, 245, 246);
+  --color-shadow-14: rgba(38, 50, 56, 0.14);
+  --color-shadow-22: rgba(38, 50, 56, 0.22);
 }
 
 *:focus {
@@ -54,6 +59,10 @@
 //fonts
 h1, h2, h3, h4, button, input{
   font-family: 'Noto Sans SC', sans-serif;
+}
+
+body {
+  background-color: var(--color-background-base);
 }
 
 // primary theme
@@ -136,17 +145,22 @@ div.material-banner {
 // Router-view-container
 div#router-view-container {
   margin: 0;
-  padding: 16px;
+  padding: 0;
   div#router-view-layout {
     margin: 0;
-    padding: 0;
+    padding: 16px;
+    background-color: var(--color-background-content);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.20);
   }
 }
+
 @include media('>desktop') {
   div#router-view-container {
     div#router-view-layout {
       max-width: 58em;
-      margin: 0 auto;
+      margin: auto;
+      margin-top: -52px;
+      padding-top: 68px;
     }
   }
 }
