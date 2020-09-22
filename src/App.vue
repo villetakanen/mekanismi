@@ -9,6 +9,7 @@
         <router-link to="/login">Login</router-link> |
         <router-link to="/profile">Profile</router-link>
       </p>
+      <p>User is logged in: {{userSessionActive}}</p>
       <router-view></router-view>
     </div>
   </div>
@@ -19,11 +20,16 @@
 import { defineComponent } from 'vue'
 import VersionInfo from './components/app/VersionInfo.vue'
 import MaterialBanner from './components/app/MaterialBanner.vue'
+import { useProfile } from './lib/useProfile'
 
 export default defineComponent({
   components: {
     VersionInfo,
     MaterialBanner
+  },
+  setup () {
+    const { userSessionActive } = useProfile()
+    return { userSessionActive }
   }
 })
 </script>
