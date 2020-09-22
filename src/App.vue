@@ -1,4 +1,5 @@
 <template>
+  <MaterialAppBar/>
   <MaterialBanner/>
   <div id="router-view-container">
     <div id="router-view-layout">
@@ -13,22 +14,22 @@
       <router-view></router-view>
     </div>
   </div>
-  <VersionInfo/>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import VersionInfo from './components/app/VersionInfo.vue'
+import { defineComponent, onMounted } from 'vue'
 import MaterialBanner from './components/app/MaterialBanner.vue'
 import { useProfile } from './lib/useProfile'
+import MaterialAppBar from './components/app/MaterialAppBar.vue'
 
 export default defineComponent({
   components: {
-    VersionInfo,
-    MaterialBanner
+    MaterialBanner,
+    MaterialAppBar
   },
   setup () {
     const { userSessionActive } = useProfile()
+
     return { userSessionActive }
   }
 })

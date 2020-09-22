@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
 import firebase from 'firebase/app'
+import { useProfile } from './lib/useProfile'
 
 // import './index.css'
 
@@ -34,4 +35,7 @@ firebase.initializeApp(config)
 
 firebase.auth().onAuthStateChanged((user) => {
   console.log('onAuthStateChanged', user)
+  useProfile().authStateChanged(user)
 })
+
+console.log('...')

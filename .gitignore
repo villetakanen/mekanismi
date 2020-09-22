@@ -8,3 +8,4 @@ firebase-debug.log
 
 # Local configs
 *.env
+.DS_Store
