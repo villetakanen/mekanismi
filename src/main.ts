@@ -34,8 +34,5 @@ const config = {
 firebase.initializeApp(config)
 
 firebase.auth().onAuthStateChanged((user) => {
-  console.log('onAuthStateChanged', user)
   useProfile().authStateChanged(user)
 })
-
-console.log('...')

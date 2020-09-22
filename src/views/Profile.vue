@@ -4,21 +4,32 @@
   <p v-if="userSessionActive">{{userSSOData.displayName}}</p>
   <p v-if="userSessionActive">{{userSSOData.email}}</p>
   <img v-if="userSessionActive" class="avatar" :src="userSSOData.photoURL"/>
-  <p><button v-if="userSessionActive">Logout</button></p>
+  <p><button v-if="userSessionActive" @click="logout()">Logout</button></p>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 import PageHeader from '../components/layout/PageHeader.vue'
 import { useProfile } from '../lib/useProfile'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 export default defineComponent({
   components: {
     PageHeader
   },
   setup () {
+    const router = useRouter()
     const { userSSOData, userSessionActive } = useProfile()
-    return { userSSOData, userSessionActive }
+    if (!userSessionActive.value) router.push('/login')
+
+    const logout = () => {
+      firebase.auth().signOut().then(() => {
+        router.push('/')
+      })
+    }
+    return { logout, userSSOData, userSessionActive }
   }
 })
 </script>

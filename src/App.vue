@@ -6,31 +6,22 @@
       <p>
         Test routes:
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/login">Login</router-link> |
-        <router-link to="/profile">Profile</router-link>
+        <router-link to="/about">About</router-link>
       </p>
-      <p>User is logged in: {{userSessionActive}}</p>
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent } from 'vue'
 import MaterialBanner from './components/app/MaterialBanner.vue'
-import { useProfile } from './lib/useProfile'
 import MaterialAppBar from './components/app/MaterialAppBar.vue'
 
 export default defineComponent({
   components: {
     MaterialBanner,
     MaterialAppBar
-  },
-  setup () {
-    const { userSessionActive } = useProfile()
-
-    return { userSessionActive }
   }
 })
 </script>

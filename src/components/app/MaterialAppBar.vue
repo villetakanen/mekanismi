@@ -5,12 +5,26 @@
     <button class="appLogoButton"><img src="../../assets/fox.svg"/></button>
     <h1>Mekanismi</h1>
     <VersionInfo/>
+    <div
+      v-if="userSessionActive"
+      class="profileButton"
+      @click="openProfile()">
+      <img :src="userSSOData.photoURL" :alt="userSSOData.displayName"/>
+    </div>
+    <div
+      v-if="!userSessionActive"
+      class="profileButton"
+      @click="openProfile()">
+      <img src="../../assets/profile.svg" alt="login"/>
+    </div>
   </div>
   <div style="height:52px;clear:both"></div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useProfile } from '../../lib/useProfile'
 import VersionInfo from './VersionInfo.vue'
 
 export default defineComponent({
@@ -18,6 +32,13 @@ export default defineComponent({
     VersionInfo
   },
   setup () {
+    const { userSessionActive, userSSOData } = useProfile()
+    const router = useRouter()
+
+    const openProfile = () => {
+      router.push('/profile')
+    }
+
     const elevationClass = ref('')
     const handleScroll = () => {
       console.log(window.scrollY)
@@ -25,7 +46,7 @@ export default defineComponent({
       else elevationClass.value = ''
     }
     onMounted(() => { window.addEventListener('scroll', handleScroll) })
-    return { elevationClass }
+    return { elevationClass, userSessionActive, userSSOData, openProfile }
   }
 })
 </script>
@@ -58,6 +79,23 @@ div#appBar{
   &.elevated {
     box-shadow: 0px 16px 0px 0px var(--color-shadow-14);
     // box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20)
+  }
+  div.profileButton {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    padding: 0px;
+    position: absolute;
+    right: 32px;
+    top: 6px;
+    margin-right: 16px;
+    overflow: hidden;
+    border: solid 2px rgba(255,255,255, 0.44);
+    img {
+      width: 42px;
+      height: 42px;
+      margin-left: -2px;
+    }
   }
   button.appLogoButton{
     border-radius: 50%;
