@@ -5,3 +5,6 @@ node_modules
 dist
 .firebase/hosting*
 firebase-debug.log
+
+# Local configs
+*.env
