@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.6.0](https://github.com/villetakanen/mekanismi/compare/v3.5.0...v3.6.0) (2020-09-22)
+
+
+### Features
+
+* material app bar added ([6a570b6](https://github.com/villetakanen/mekanismi/commit/6a570b6a28929053cf523b8abe90cbb577a72d60))
+
 ## [3.5.0](https://github.com/villetakanen/mekanismi/compare/v3.4.2...v3.5.0) (2020-09-22)
 
 
