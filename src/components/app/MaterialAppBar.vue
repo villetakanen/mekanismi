@@ -55,23 +55,12 @@ export default defineComponent({
 div#appBar{
   display: flex;
   background-color: var(--color-primary);
-  height: 22px;
-  border-top: solid 4px var(--color-primary-dark);
   color: var(--font-color-primary);
-  padding: 16px;
   position: fixed;
   width: 100%;
   top: 0;
   box-shadow: 0px 9px 1px 0px rgba(0,0,0,0.0);
   transition: box-shadow 0.3s;
-  h1 {
-    font-weight: 200;
-    text-transform: uppercase;
-    font-size: 22px;
-    line-height: 22px;
-    margin: 0;
-    padding: 0;
-  }
   p {
     padding: 0;
     margin: 0;
@@ -82,18 +71,18 @@ div#appBar{
   }
   div.profileButton {
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     padding: 0px;
     position: absolute;
-    right: 32px;
-    top: 6px;
+    right: 16px;
+    top: 2px;
     margin-right: 16px;
     overflow: hidden;
     border: solid 2px rgba(255,255,255, 0.44);
     img {
-      width: 42px;
-      height: 42px;
+      width: 45px;
+      height: 45px;
       margin-left: -2px;
     }
   }
@@ -103,7 +92,8 @@ div#appBar{
     height: 42px;
     padding: 0px;
     margin-right: 16px;
-    margin-top:-10px;
+    margin-top:-4px;
+    margin-bottom: -4px;
     border: solid 2px rgba(255,255,255, 0.44);
     overflow: visible;
     box-shadow: none;
