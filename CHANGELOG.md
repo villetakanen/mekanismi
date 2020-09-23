@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.8.0](https://github.com/villetakanen/mekanismi/compare/v3.4.2...v3.8.0) (2020-09-23)
+
+
+### Features
+
+* firebase config added ([870b1f2](https://github.com/villetakanen/mekanismi/commit/870b1f2eb4d64c034eb1f391c9b4eb7ae1893333))
+* firebase login buttons added ([ed7610c](https://github.com/villetakanen/mekanismi/commit/ed7610cefbdc7d8047ab2240a47bec6b73a79e19))
+* login view session guard ([8e80947](https://github.com/villetakanen/mekanismi/commit/8e809474642914894884d026e6e150fc363bc831))
+* login works ([6eb9d99](https://github.com/villetakanen/mekanismi/commit/6eb9d99e988c8161d0883d0e981bea81c433e511))
+* logout ([ad283c9](https://github.com/villetakanen/mekanismi/commit/ad283c9e5984e2104314e368e96b745844f2621c))
+* material app bar added ([6a570b6](https://github.com/villetakanen/mekanismi/commit/6a570b6a28929053cf523b8abe90cbb577a72d60))
+* profile and login views added ([b31115b](https://github.com/villetakanen/mekanismi/commit/b31115b94c6eb45484ed93e7f54cdba3a8462c03))
+
 ## [3.7.0](https://github.com/villetakanen/mekanismi/compare/v3.6.0...v3.7.0) (2020-09-22)
 
 
