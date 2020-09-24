@@ -1,12 +1,9 @@
+// eslint-disable-next-line
 module.exports = {
   root: true,
 
   env: {
     node: true
-  },
-
-  'import/resolver': {
-    alias: ['/@/', './src']
   },
 
   parserOptions: {
