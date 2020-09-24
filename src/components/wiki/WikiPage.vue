@@ -23,21 +23,22 @@ export default defineComponent({
     onMounted(() => {
       const editor = new EditorJS({
         holder: 'editorjs',
+        readOnly: true,
         tools: {
           header: Header
         }
       })
       editor.isReady.then(() => {
         editor.blocks.render({
-        blocks: [{
-          type: 'header',
-          data: {
-            text: 'Example header ' + props.siteid + '/' + props.pageid,
-            level: 1
-          }
-        }]
+          blocks: [{
+            type: 'header',
+            data: {
+              text: 'Example header ' + props.siteid + '/' + props.pageid,
+              level: 1
+            }
+          }]
+        })
       })
-    })
     })
   }
 })
