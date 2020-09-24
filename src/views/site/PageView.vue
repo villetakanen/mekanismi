@@ -1,4 +1,5 @@
 <template>
+  <MaterialButton>Save</MaterialButton>
   <WikiPage
     :siteid="siteid"
     :pageid="resolvedPageid"
@@ -8,10 +9,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import WikiPage from '/@/components/wiki/WikiPage.vue'
+import MaterialButton from '/@/components/app/MaterialButton.vue'
 
 export default defineComponent({
   components: {
-    WikiPage
+    WikiPage,
+    MaterialButton
   },
   props: {
     siteid: {
@@ -24,8 +27,8 @@ export default defineComponent({
     }
   },
   setup (props) {
-    const resolvedPageid = ref(props.pageid? props.pageid : props.siteid)
-    return{ resolvedPageid }
+    const resolvedPageid = ref(props.pageid ? props.pageid : props.siteid)
+    return { resolvedPageid }
   }
 })
 </script>
