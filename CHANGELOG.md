@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.9.0](https://github.com/villetakanen/mekanismi/compare/v3.8.0...v3.9.0) (2020-09-24)
+
+
+### Features
+
+* editorjs added to wikipage ([c118f17](https://github.com/villetakanen/mekanismi/commit/c118f174f16a1a94cdc0a3294b96d98987f37ad1))
+* site page route and scaffold ([24defb9](https://github.com/villetakanen/mekanismi/commit/24defb93bfe4edd1be3b2dfb3770b00e29a00590))
+
+
+### Bug Fixes
+
+* added end tag to wikitext.vue ([e635a6c](https://github.com/villetakanen/mekanismi/commit/e635a6c6b106dfa170b25defe690b40beb2e3cb8))
+* package updates and link bar ux ([a3ef7cb](https://github.com/villetakanen/mekanismi/commit/a3ef7cb368de382b1cb2c364d01b07cc540be1ff))
+
 ## [3.8.0](https://github.com/villetakanen/mekanismi/compare/v3.4.2...v3.8.0) (2020-09-23)
 
 
