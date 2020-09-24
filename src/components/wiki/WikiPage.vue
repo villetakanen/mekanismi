@@ -3,42 +3,82 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import EditorJS from '@editorjs/editorjs'
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
+import EditorJS, { OutputBlockData } from '@editorjs/editorjs'
 import Header from '@editorjs/header'
+import { Page, PageData, useSite } from '../../lib/site'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 
 export default defineComponent({
   props: {
-    siteid: {
-      type: String,
-      required: true
-    },
     pageid: {
       type: String,
       required: true
     }
   },
   setup (props) {
-    onMounted(() => {
-      const editor = new EditorJS({
-        holder: 'editorjs',
-        hideToolbar: false,
-        tools: {
-          header: Header
+    const { site } = useSite()
+    const editor = new EditorJS({
+      holder: 'editorjs',
+      hideToolbar: false,
+      tools: {
+        header: Header
+      }
+    })
+    const pageStruct:Page = {
+      siteid: site.value.siteid,
+      pageid: props.pageid,
+      data: {
+        title: props.pageid,
+        blockContent: undefined
+      }
+    }
+    const page = ref(pageStruct)
+
+    let unsubscribe = () => {}
+
+    function toBlockData (data:string|undefined):OutputBlockData[] {
+      console.log('toBlockData', data)
+      if (!data) return [{ type: 'paragraph', data: { text: '...' } }]
+      const dataJSON = JSON.parse(data)
+      return dataJSON as OutputBlockData[]
+    }
+
+    function subscribe () {
+      const db = firebase.firestore()
+      const pageRef = db.collection('sites').doc(site.value.siteid).collection('pages').doc(props.pageid)
+      unsubscribe = pageRef.onSnapshot((doc) => {
+        if (doc.exists) {
+          page.value.data = doc.data() as PageData
+          editor.isReady.then(() => {
+            editor.blocks.render({
+              blocks: toBlockData(page.value.data.blockContent)
+            })
+          })
         }
       })
+    }
+
+    onMounted(() => {
+      subscribe()
       editor.isReady.then(() => {
         editor.blocks.render({
           blocks: [{
             type: 'header',
             data: {
-              text: 'Example header ' + props.siteid + '/' + props.pageid,
+              text: 'Example header ' + site.value.siteid + '/' + props.pageid,
               level: 1
             }
           }]
         })
       })
     })
+
+    onUnmounted(() => {
+      unsubscribe()
+    })
+    return { site, page }
   }
 })
 </script>
