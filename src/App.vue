@@ -6,7 +6,7 @@
       <p>
         Test routes:
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link> |
         <router-link to="/site/mekanismi">sites/mekanismi</router-link>
       </p>
       <router-view></router-view>
