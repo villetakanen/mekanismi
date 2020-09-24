@@ -1,6 +1,5 @@
 <template>
-    <h1>Alive!</h1>
-    <div id="editorjs">Editor is loaded here...</div>
+    <div id="editorjs">&nbsp;</div>
 </template>
 
 <script lang="ts">
@@ -23,7 +22,7 @@ export default defineComponent({
     onMounted(() => {
       const editor = new EditorJS({
         holder: 'editorjs',
-        readOnly: true,
+        hideToolbar: false,
         tools: {
           header: Header
         }
@@ -43,3 +42,20 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss">
+#editorjs{
+  background-color: rgba(255, 200, 0, 0.33);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.ce-block__content{
+  div, h1{
+    background-color:white;
+    border-bottom: solid 1px var(--color-shadow-14);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+}
+</style>
