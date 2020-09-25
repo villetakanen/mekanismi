@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.11.0](https://github.com/villetakanen/mekanismi/compare/v3.10.0...v3.11.0) (2020-09-25)
+
+
+### Features
+
+* fab actions added ([fa42e5d](https://github.com/villetakanen/mekanismi/commit/fa42e5d50b9f217b645168462eca63a6d5f4de8c))
+
 ## [3.10.0](https://github.com/villetakanen/mekanismi/compare/v3.9.0...v3.10.0) (2020-09-25)
 
 
