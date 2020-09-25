@@ -14,3 +14,16 @@
   background-color: var(--color-background-content);
   position: relative;
 }
+
+button.material-button {
+  @include BoxShadow(4);
+  transition: background 0.8s;
+  &.material-button-text {
+    background: none;
+    color: var(--color-primary);
+    box-shadow: none;
+    &.material-button-hover{
+      background-color: var(--color-shadow-14);
+    }
+  }
+}

@@ -22,7 +22,7 @@ export default defineComponent({
   setup () {
     const editor = new EditorJS({
       holder: 'newPostJSEditor',
-      hideToolbar: false,
+      hideToolbar: true,
       minHeight: 22,
       tools: {
         paragraph: {

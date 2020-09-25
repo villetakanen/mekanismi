@@ -83,7 +83,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #editorjs{
   background-color: rgba(255, 200, 0, 0.33);
   margin-top: 8px;

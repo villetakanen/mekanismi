@@ -1,17 +1,19 @@
 <template>
   <button
-    class='material-button'
-    @click="action()">
+    :class='`material-button ${buttonClasses}`'
+    @click="action()"
+    @mouseenter="hover()"
+    @mouseleave="dehover()">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 
 export default defineComponent({
   props: {
-    icon: {
+    text: {
       type: String,
       required: false
     },
@@ -19,6 +21,24 @@ export default defineComponent({
       type: Function,
       required: false
     }
+  },
+  setup (props) {
+    const buttonClassArray = ref([''])
+    const buttonClasses = computed(():string => {
+      let r:string = ''
+      buttonClassArray.value.forEach((c) => { r += c + ' ' })
+      return r
+    })
+    if (typeof props.text === 'string') buttonClassArray.value.push('material-button-text')
+
+    function hover () {
+      buttonClassArray.value.push('material-button-hover')
+      console.log('hover')
+    }
+    function dehover () {
+      buttonClassArray.value = buttonClassArray.value.filter((val) => (val !== 'material-button-hover'))
+    }
+    return { buttonClasses, hover, dehover }
   }
 })
 </script>
