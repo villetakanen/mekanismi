@@ -1,0 +1,13 @@
+@import './include-media.scss';
+@import './material-shadows.scss';
+
+@mixin BoxSpacing {
+  margin: 8px auto;
+  padding: 8px;
+  max-width: 720px;
+}
+  
+.material-card{
+  @include BoxShadow(3);
+  @include BoxSpacing();
+}

@@ -1,11 +1,20 @@
 import { computed, ref } from 'vue'
 import firebase from 'firebase/app'
 
+interface SSOInfo {
+  uid: string,
+  email?: string|null,
+  displayName?: string|null,
+  photoURL?: string|null
+}
+
+const SSOStruct:SSOInfo = { uid: '' }
+
 const userIsAuthz = ref(false)
-const userSSOinfo = ref({})
+const userSSOinfo = ref(SSOStruct)
 
 const userSessionActive = computed(():boolean => { return userIsAuthz.value })
-const userSSOData = computed(() => (userSSOinfo.value))
+const userSSOData = computed(():SSOInfo => (userSSOinfo.value))
 
 function authStateChanged (user:firebase.User|null):void {
   if (!user) {
