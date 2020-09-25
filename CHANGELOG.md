@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.10.0](https://github.com/villetakanen/mekanismi/compare/v3.9.0...v3.10.0) (2020-09-25)
+
+
+### Features
+
+* blockdata from firebase ([d7d152e](https://github.com/villetakanen/mekanismi/commit/d7d152e4332bb473fc3fa543d136682158b7f58f))
+* getpage method for site ([20b9b59](https://github.com/villetakanen/mekanismi/commit/20b9b5983ddb3d5b08ec9b96b736c933ff0399f1))
+* isolated button component to an sfc ([e77aa6b](https://github.com/villetakanen/mekanismi/commit/e77aa6b655ffe38eb2e9e0bdbce5648c582189e4))
+
 ## [3.9.0](https://github.com/villetakanen/mekanismi/compare/v3.8.0...v3.9.0) (2020-09-24)
 
 
