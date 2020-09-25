@@ -29,9 +29,4 @@ export default defineComponent({
 
 <style lang="scss">
 @import './assets/layout.scss';
-
-body {
-  padding: 0;
-  margin: 0;
-}
 </style>

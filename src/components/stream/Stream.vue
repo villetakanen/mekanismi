@@ -1,19 +1,24 @@
 <template>
   <div class="stream-container">
-    <div
-      v-for="post in postStream" :key="post.postid"
+    <PostCard
+      v-for="post in postStream"
+      :key="post.postid"
+      :post="post"
       class="material-card">
-      <p v-for="block in post.blockContent.blocks" :key="block.time">{{block.data.text}}</p>
-    </div>
+    </PostCard>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import firebase from 'firebase/app'
+import PostCard from './PostCard.vue'
 import 'firebase/firestore'
 
 export default defineComponent({
+  components: {
+    PostCard
+  },
   setup () {
     const postStream = ref([
       { postid: '', author: 'aaa', blockContent: { type: 'paragraph', data: { text: 'aaa' } } }
@@ -41,7 +46,14 @@ export default defineComponent({
       unsubscribe()
     })
 
-    return { postStream }
+    function deletePost (postid: string):void {
+      // const db = firebase.firestore()
+      // const postRef = db.collection('stream').doc(postid)
+      // postRef.delete()
+      console.log('triggers', postid)
+    }
+
+    return { postStream, deletePost }
   }
 })
 </script>

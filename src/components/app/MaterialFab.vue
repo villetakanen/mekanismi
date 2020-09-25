@@ -3,6 +3,7 @@
     @click="action()"
     class="material_fab">
     <img v-if="icon === 'new-post'" src="/@/assets/icons/new-post.svg" />
+    <img v-if="icon === 'delete'" src="/@/assets/icons/delete.svg" />
     <slot></slot>
   </button>
 </template>

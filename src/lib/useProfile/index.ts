@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 import firebase from 'firebase/app'
 
-interface SSOInfo {
+export interface SSOInfo {
   uid: string,
   email?: string|null,
   displayName?: string|null,

@@ -1,5 +1,6 @@
 @import './include-media.scss';
 @import './material-shadows.scss';
+@import './color-theme.scss';
 
 @mixin BoxSpacing {
   margin: 8px auto;
@@ -10,4 +11,6 @@
 .material-card{
   @include BoxShadow(3);
   @include BoxSpacing();
+  background-color: var(--color-background-content);
+  position: relative;
 }

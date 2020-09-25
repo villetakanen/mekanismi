@@ -1,66 +1,6 @@
 @import './include-media.scss';
-
-@mixin BoxShadow ($dp) {
-  @if $dp==0 {
-      box-shadow: none
-  }
-  @else if $dp==1 {
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20)
-  }
-  @else if $dp==2 {
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20)
-  }
-  @else if $dp==3 {
-      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12), 0 1px 8px 0 rgba(0, 0, 0, .20)
-  }
-  @else if $dp==4 {
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==6 {
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==8 {
-      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==9 {
-      box-shadow: 0 9px 12px 1px rgba(0, 0, 0, .14), 0 3px 16px 2px rgba(0, 0, 0, .12), 0 5px 6px -3px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==12 {
-      box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==16 {
-      box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20)
-  }
-  @else if $dp==24 {
-      box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .20)
-  }
-}
-
-:root {
-  --color-border-light: rgba(170,200,200,1);
-  --color-fore-on-accent: white;
-  
-  --color-primary: #263238;
-  --color-primary-dark: #000a12;
-  --color-primary-light: #4f5b62;
-  --color-primary-font: white;
-  
-  --color-secondary: #00e676;
-  --color-secondary-dark: #00b248;
-  --color-secondary-light: #66ffa6;
-  --color-secondary-font: black;
-  
-  
-  --color-primary-accent: #F03E5B;
-  --color-primary-light-tint: rgba(66, 142, 146, 0.1);
-  --font-color-primary: #263238;
-  --font-color-light: #000a12;
-  --color-background-base: rgb(226,226,225);
-  --color-background-content: rgb(245, 245, 246);
-  --color-shadow-14: rgba(38, 50, 56, 0.14);
-  --color-shadow-22: rgba(38, 50, 56, 0.22);
-  --color-tint-primary: rgb(76, 175, 80, 0.04);
-}
+@import './material-shadows.scss';
+@import './color-theme.scss';
 
 *:focus {
   outline: none;
@@ -105,6 +45,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--color-background-base);
+  margin: 0;
+  padding: 0;
 }
 h1 {
   // Headline 3
@@ -118,10 +61,6 @@ button {
 }
 p {
   @include body1();
-}
-
-body {
-  background-color: var(--color-background-base);
 }
 
 // primary theme
@@ -207,9 +146,7 @@ div#router-view-container {
   padding: 0;
   div#router-view-layout {
     margin: 0;
-    padding: 16px;
-    background-color: var(--color-background-content);
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.20);
+    padding: 0;
     position: relative;
   }
 }
@@ -217,10 +154,8 @@ div#router-view-container {
 @include media('>desktop') {
   div#router-view-container {
     div#router-view-layout {
-      max-width: 58em;
+      max-width: 840px;
       margin: auto;
-      margin-top: -52px;
-      padding-top: 68px;
     }
   }
 }
