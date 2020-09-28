@@ -1,7 +1,7 @@
 <template>
   <div class="newPost material-card">
     <div id="newPostJSEditor"></div>
-    <button @click="post()">post!</button>
+    <MaterialButton :action="post">post!</MaterialButton>
   </div>
   <Stream/>
 </template>
@@ -13,11 +13,13 @@ import Paragraph from '@editorjs/paragraph'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import Stream from '/@/components/stream/Stream.vue'
+import MaterialButton from '/@/components/app/MaterialButton.vue'
 import { useProfile } from '../../lib/useProfile'
 
 export default defineComponent({
   components: {
-    Stream
+    Stream,
+    MaterialButton
   },
   setup () {
     const editor = new EditorJS({

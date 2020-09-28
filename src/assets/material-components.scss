@@ -16,14 +16,21 @@
 }
 
 button.material-button {
+  background-color: var(--color-primary);
   @include BoxShadow(4);
   transition: background 0.8s;
+  transition: box-shadow 1.2s;
+  &.material-button-hover{
+    background-color: var(--color-primary-dark);
+    @include BoxShadow(6);
+  }
   &.material-button-text {
     background: none;
     color: var(--color-primary);
     box-shadow: none;
     &.material-button-hover{
       background-color: var(--color-shadow-14);
+      @include BoxShadow(6);
     }
   }
 }

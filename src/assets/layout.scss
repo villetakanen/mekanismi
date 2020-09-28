@@ -87,7 +87,6 @@ button {
 
   //animation
   background-position: center;
-  transition: background 1.5s;
   transition: box-shadow 1.5s;
   //box-shadow: var(--shadow-2dp);
   @include BoxShadow(3);
@@ -95,20 +94,10 @@ button {
     box-shadow: none;
     background: var(--color-primary-lighten) radial-gradient(circle, transparent 1%, var(--color-primary) 1%) center/15000%;
   }
-  &:hover{
-    @include BoxShadow(4);
-    background-color: var(--color-primary-accent);
-  }
 }
 
-button.action-text{
-  background-color: var(--color-base);
-  color: var(--color-primary);
-  box-shadow: none;
-}
-button.action-text:hover {
-  background: var(--color-primary-light-tint) radial-gradient(circle, transparent 1%, var(--color-base) 1%) center/15000%;
-}
+
+
 
 // Material Banner element
 div.material-banner {

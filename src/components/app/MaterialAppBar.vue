@@ -3,7 +3,7 @@
     id="appBar"
     :class="elevationClass">
     <button class="appLogoButton"><img src="../../assets/fox.svg"/></button>
-    <h1>Mekanismi</h1>
+    <h1>Mekanismi / Pelilauta</h1>
     <VersionInfo/>
     <div
       v-if="userSessionActive"

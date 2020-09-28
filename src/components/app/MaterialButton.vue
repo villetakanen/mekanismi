@@ -1,7 +1,7 @@
 <template>
   <button
     :class='`material-button ${buttonClasses}`'
-    @click="action()"
+    @click="clicked()"
     @mouseenter="hover()"
     @mouseleave="dehover()">
     <slot></slot>
@@ -38,7 +38,13 @@ export default defineComponent({
     function dehover () {
       buttonClassArray.value = buttonClassArray.value.filter((val) => (val !== 'material-button-hover'))
     }
-    return { buttonClasses, hover, dehover }
+
+    function clicked () {
+      buttonClassArray.value.push('material-button-clicked')
+      if (props.action) props.action()
+    }
+
+    return { buttonClasses, hover, dehover, clicked }
   }
 })
 </script>
