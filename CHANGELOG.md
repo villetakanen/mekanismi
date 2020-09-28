@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.14.0](https://github.com/villetakanen/mekanismi/compare/v3.13.0...v3.14.0) (2020-09-28)
+
+
+### Features
+
+* buttons moved to a sfc ([f33aa55](https://github.com/villetakanen/mekanismi/commit/f33aa55ea9ea706ed350c0ea3dfc7d6604895e83))
+
+
+### Bug Fixes
+
+* button styling ([bf2887b](https://github.com/villetakanen/mekanismi/commit/bf2887b79f0749e24a6186f5989161bb3ee2ec97))
+* npm outdated eslint updated ([89879fa](https://github.com/villetakanen/mekanismi/commit/89879fa2a5eb66d1b249d6582a6423e4376395d7))
+
 ## [3.13.0](https://github.com/villetakanen/mekanismi/compare/v3.12.0...v3.13.0) (2020-09-25)
 
 
